@@ -2,7 +2,6 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const Form = require('./Form');
 var List = require('./student-list');
-require('./style.less');
 
 function App() {
 	React.Component.call(this);
@@ -23,7 +22,7 @@ function App() {
     }
 
 	this.render = function() {
-		return <div className="main">
+		return <div>
 			<Form onNewStudent={this.addStudent}/>
             <List students={this.state.students}/>
 		</div>

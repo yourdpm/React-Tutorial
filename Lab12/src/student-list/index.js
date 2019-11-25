@@ -8,16 +8,23 @@ function List(props) {
     
     this.render = function() {
         return (
-            <div className="StudentList">
-                {this.props.students.map( (student, idx) =>
-                (
-                    <div className="StudentItem" key={idx}>
-                        <div>{student.name}</div>
-                        <div>{student.addr}</div>
-                        <div>{student.gpa}</div>
-                    </div>
-                )
-                )}
+            <div className="list">
+                <table className="">
+                    <tr>
+                        <th>Name</th>
+                        <th>Adress</th>
+                        <th>GPA</th>
+                    </tr>
+                    {this.props.students.map( (student, idx) =>
+                    (
+                        <tr className="" key={idx}>
+                            <td>{student.name}</td>
+                            <td>{student.addr}</td>
+                            <td>{student.gpa}</td>
+                        </tr>
+                    )
+                    )}
+                </table>
             </div>
         )
     }

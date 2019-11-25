@@ -49,13 +49,13 @@ function Form(props) {
     
     this.render = function() {
         return (
-            <div >
-                <div className="c1">
+            <div>
+                <div className="r1">
                     <label>Name</label>
                     <label>Address</label>
                     <label>GPA</label>
                 </div>
-                <div className="c2">
+                <div className="r2">
                     <input type="text" value ={this.state.studentName} onChange={this.nameChange}>
                     </input>
                     <input type="text" value = {this.state.studentAddr} onChange={(e) => this.addrChange(e)} >
