@@ -28,14 +28,20 @@ function Form(props) {
 
     this.handleOk = handleOk.bind(this);
     function handleOk(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        this.props.onNewStudent({
-            name: this.state.studentName,
-            addr: this.state.studentAddr,
-            gpa: this.state.studentGPA
-        });
-        console.log(this.state.studentName);
+        var a = parseFloat(this.state.studentGPA);
+        if (a >= 0 && a <= 4.0 ) {
+            e.preventDefault();
+            e.stopPropagation();
+            this.props.onNewStudent({
+                name: this.state.studentName,
+                addr: this.state.studentAddr,
+                gpa: this.state.studentGPA
+            });
+            console.log(this.state.studentName);
+        }
+        else {
+            alert("Ban nhap diem tu 0-4.0");
+        }
     }
     
     this.handleReset = handleReset.bind(this);
@@ -64,7 +70,7 @@ function Form(props) {
                     </input>
                     
                     <button onClick={this.handleReset}>Reset</button>
-                    <button onClick={this.handleOk}>OK</button>
+                    <button disabled={!this.state.studentName || !this.state.studentAddr || !this.state.studentGPA} onClick={this.handleOk}>OK</button>
                 </div>
                 
             </div>

@@ -23,9 +23,12 @@ function App() {
     }
 
 	this.render = function() {
-		return <div className="main">
-			<Form onNewStudent={this.addStudent}/>
-            <List students={this.state.students}/>
+		return <div>
+            <div className="main">
+                <div className="col1"><Form onNewStudent={this.addStudent}/></div>
+                <div className="col2"><List students={this.state.students}/></div>
+            </div>
+            
 		</div>
 	}
 }
